@@ -1,4 +1,12 @@
 import { AppRegistry } from 'react-native';
-import App from './src/components/login';
+import LoginScreen from './src/components/LoginScreen';
+import { StackNavigator } from 'react-navigation';
+import LevelOneScreen from './src/components/LevelOneScreen';
+const AppNavigator = StackNavigator({
+  LoginScreen: { screen: LoginScreen,  navigationOptions: { header: null }},
+  LevelOneScreen: { screen: LevelOneScreen,  navigationOptions: { header: null }},
+});
 
-AppRegistry.registerComponent('gamePika', () => App);
+AppRegistry.registerComponent('gamePika', () => AppNavigator);
+
+
