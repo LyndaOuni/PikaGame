@@ -4,22 +4,32 @@ import {
   Text,
   View,
   Image,
-  navigator,
+  TextInput,
+  Button
 } from 'react-native';
-import LoginForm from './loginForm';
+import LevelOneScreen from './levelOne';
+import { NavigationActions } from 'react-navigation';
 
-export default class Login extends Component {
-  
+export default class LoginScreen  extends Component {
+  constructor(props){
+    super(props);
+  }
+
+
   render() {
+      console.log(this);
     return (
       <View style={styles.container}>
        <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require('../images/splashScreenCar.png')}/>
        </View>
-        <View style={styles.formContainer}>
-         <LoginForm/>
+      
+        		<View style={styles.containerLogin}>
+					<TextInput placeholder="username" style={styles.input} />
+					<Button title="Play" color="#84153d" />
+				</View>
+		
        </View>
-      </View>
     );
   }
 }
@@ -34,11 +44,15 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center'
   },
-  formContainer: {
 
-  },
   logo: {
     width: 250,
     height: 150,
+  },
+  	containerLogin: {
+		padding: 20
+	},
+	input: {
+		height: 40,
   }
 });
